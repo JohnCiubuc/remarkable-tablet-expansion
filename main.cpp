@@ -4,20 +4,17 @@
 //#include <QtGui>
 //#include <QtPlugin>
 #include "mainview.h"
-#include "options.h"
 #include "handler.h"
 #include "devinput.h"
 
-#include "tabletwindow.h"
 
 #include <QtPlugin>
 #include "server.h"
+#include "systemwatcher.h"
 Q_IMPORT_PLUGIN(QsgEpaperPlugin)
 
 int main(int argc, char *argv[])
 {
-    qmlRegisterType<TabletWindow>("Test", 1, 0, "TabletWindow");
-    qmlRegisterType<TabletCanvas>("Test", 1, 0, "TabletCanvas");
 
     qputenv("QMLSCENE_DEVICE", "epaper");
     qputenv("QT_QPA_PLATFORM", "epaper:enable_fonts");
@@ -70,6 +67,10 @@ int main(int argc, char *argv[])
 
     Server * s = new Server;
     QObject::connect(view, &MainView::sendPacket, s, &Server::sendPacket);
+
+    SystemWatcher * sWatcher = new SystemWatcher;
+    QObject::connect(sWatcher, &SystemWatcher::batteryUpdate, view, &MainView::batteryUpdate);
+
 //    QGuiApplication app(argc, argv);
 
 //    QQmlApplicationEngine engine;

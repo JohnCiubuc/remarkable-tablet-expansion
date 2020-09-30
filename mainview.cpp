@@ -5,6 +5,10 @@
 MainView::MainView()
 {
 
+    bat_images << "qrc:/images/battery/battery_discharging_020.png";
+    bat_images << "qrc:/images/battery/battery_discharging_060.png";
+    bat_images << "qrc:/images/battery/battery_discharging_080.png";
+    bat_images << "qrc:/images/battery/battery_discharging_100.png";
 
 }
 
@@ -18,8 +22,10 @@ void MainView::connections()
     QObject::connect(home, SIGNAL(launchSignal(QString)),
                      this, SLOT(launchProcess(QString)));
     vol_block = home->findChild<QObject*>("vol_block");
+    bat_block << home->findChild<QObject*>("bat_percent");
+    bat_block << home->findChild<QObject*>("bat_image");
 //    qDebug() << (vol_block);
-    qDebug() << "Property value:" << QQmlProperty::read(vol_block, "x").toInt();
+//    qDebug() << "Property value:" << QQmlProperty::read(vol_block, "x").toInt();
 
 //    QQmlProperty::write(vol_block, "width", 200);
 
@@ -92,7 +98,13 @@ void MainView::stylusPresence(bool b)
 //        this->setSource(QDir(DEPLOYMENT_PATH).filePath("qml/hex-grid.qml"));
 //    else
 //        this->setSource(QDir(DEPLOYMENT_PATH).filePath("qml/prime.qml"));
-//    connections();
+    //    connections();
+}
+
+void MainView::batteryUpdate(int bat_amount, int bat_status)
+{
+    QQmlProperty::write(bat_block[0], "text", QString::number(bat_amount) + "%");
+    QQmlProperty::write(bat_block[1], "source", bat_images.at(int(float(bat_amount)/25.)));
 }
 
 void MainView::getVolume()

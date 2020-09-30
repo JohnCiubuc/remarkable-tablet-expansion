@@ -46,7 +46,7 @@ Rectangle {
 
     Rectangle {
         id: vol_block
-        objectName: "vol_block"
+//        objectName: "vol_block"
         x: 1404
         y: 1820
         width: 1404
@@ -126,19 +126,19 @@ Rectangle {
 
     Item {
         id: block
-        x: 1259
-        y: -144
+        x: 1252
+        y: -121
         width: 296
         height: 300
         property bool radialOpen: false
 
-//        PropertyAnimation {
-//            id: animMove;
-//            target:block
-//            properties:"x"
-//            from: 0;
-//            to: 200;
-//            duration: 200}
+        //        PropertyAnimation {
+        //            id: animMove;
+        //            target:block
+        //            properties:"x"
+        //            from: 0;
+        //            to: 200;
+        //            duration: 200}
         Image {
             id: pic
             source: "../images/circle.png"
@@ -148,23 +148,23 @@ Rectangle {
 
         ParallelAnimation {
             id: animMoveForward;
-                      PropertyAnimation{target: yt; property: "x"; from:1252; to: 1064; duration: 1}
-                      PropertyAnimation{target: yt; property: "y"; from:-140; to: 232; duration: 1}
-                      PropertyAnimation{target: krita; property: "x"; from:1262; to: 834; duration: 1}
-                      PropertyAnimation{target: krita; property: "y"; from:-145; to: 3; duration: 1}
-                  }
+            PropertyAnimation{target: yt; property: "x"; from:1252; to: 1064; duration: 1}
+            PropertyAnimation{target: yt; property: "y"; from:-140; to: 232; duration: 1}
+            PropertyAnimation{target: krita; property: "x"; from:1262; to: 834; duration: 1}
+            PropertyAnimation{target: krita; property: "y"; from:-145; to: 3; duration: 1}
+        }
         ParallelAnimation {
             id: animMoveBackward;
-                      PropertyAnimation{target: yt; property: "x"; from:1064; to: 1352; duration: 1}
-                      PropertyAnimation{target: yt; property: "y"; from:232; to: -240; duration: 1}
-                      PropertyAnimation{target: krita; property: "x"; from:834; to: 1362; duration: 1}
-                      PropertyAnimation{target: krita; property: "y"; from:3; to: -245; duration: 1}
-                  }
+            PropertyAnimation{target: yt; property: "x"; from:1064; to: 1352; duration: 1}
+            PropertyAnimation{target: yt; property: "y"; from:232; to: -240; duration: 1}
+            PropertyAnimation{target: krita; property: "x"; from:834; to: 1362; duration: 1}
+            PropertyAnimation{target: krita; property: "y"; from:3; to: -245; duration: 1}
+        }
         MouseArea {
             anchors.fill: parent
 
             onClicked: {
-            yt.visible = true;
+                yt.visible = true;
                 krita.visible = true;
                 if(block.radialOpen)
                 {
@@ -179,12 +179,52 @@ Rectangle {
             }
         }
     }
+
+    Item {
+        id: bat
+        x: -1
+        y: 0
+        width: 175
+        height: 337
+        rotation: 0
+
+
+        Column {
+            id: column
+            anchors.fill: parent
+            spacing: 12
+
+            Image {
+                id: bat_image
+                objectName: "bat_image"
+                width: 77
+                height: 107
+                source: "qrc:/images/battery/battery_discharging_100.png"
+                rotation: 180
+                mirror: false
+                transformOrigin: Item.Center
+                fillMode: Image.PreserveAspectFit
+            }
+
+            Text {
+                id: bat_percent
+                objectName: "bat_percent"
+                text: qsTr("100%")
+                font.pixelSize: 31
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignTop
+                rotation: 90
+                minimumPixelSize: 25
+            }
+        }
+
+    }
 }
 
 
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.25}
+    D{i:0;formeditorZoom:0.75}D{i:25}
 }
 ##^##*/

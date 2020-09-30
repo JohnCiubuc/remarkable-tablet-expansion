@@ -25,9 +25,13 @@ public slots:
 
     void stylusOnTablet(bool);
     void stylusPresence(bool);
+
+    void batteryUpdate(int bat_amount, int bat_status);
 private slots:
     void getVolume();
     void launchProcess(QString s);
 private:
     QObject * vol_block ;
+    QList<QObject *> bat_block ;
+    QStringList bat_images;
 };

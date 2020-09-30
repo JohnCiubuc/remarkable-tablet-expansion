@@ -18,20 +18,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 HEADERS += \
     devinput.h \
     mainview.h \
-    options.h \
     handler.h \
     server.h \
-    tabletcanvas.h \
-    tabletwindow.h
+    systemwatcher.h
 
 SOURCES += main.cpp \
     devinput.cpp \
     mainview.cpp \
-    options.cpp \
     handler.cpp \
     server.cpp \
-    tabletcanvas.cpp \
-    tabletwindow.cpp
+    systemwatcher.cpp
 
 DEPLOYMENT_PATH = /usr/share/$$TARGET
 DEFINES += DEPLOYMENT_PATH=\\\"$$DEPLOYMENT_PATH\\\"
@@ -40,6 +36,10 @@ DEFINES += QML_FOLDER=\\\"qml\\\"
 js.files = js/Main.js
 js.path == $$DEPLOYMENT_PATH/js
 INSTALLS += js
+
+qrc.files = resources.qrc
+qrc.path == $$DEPLOYMENT_PATH/resources.qrc
+INSTALLS += qrc
 
 qml.files = qml/Main.qml
 qml.files+= qml/MenuItem.qml
@@ -89,4 +89,7 @@ DISTFILES += \
 DISTFILES += \
     qml/Main_copy.qml \
     qml/prime.qml
+
+RESOURCES += \
+    resources.qrc
 
