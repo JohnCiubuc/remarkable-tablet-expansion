@@ -6,21 +6,23 @@
 #include <QDebug>
 #include <QProcess>
 
+#ifndef __PACKET
+#define __PACKET
+struct packet
+{
+    unsigned short event;
+    char message[256];
+};
+#endif
 class MainView : public QQuickView
 {
     Q_OBJECT
 signals:
-    void sendPacket(QString);
+    void sendPacket(packet);
 public:
     MainView();
     void connections();
 public slots:
-    void keyPressEvent(QKeyEvent*);
-    void mouseMoveEvent(QMouseEvent* me);
-    void mousePressEvent(QMouseEvent* me);
-    void mouseReleaseEvent(QMouseEvent* me);
-    void tabletEvent(QTabletEvent* te);
-    void touchEvent(QTouchEvent* te);
     void mousePosition(int x, int y);
 
     void stylusOnTablet(bool);
@@ -29,7 +31,7 @@ public slots:
     void batteryUpdate(int bat_amount, int bat_status);
 private slots:
     void getVolume();
-    void launchProcess(QString s);
+    void launchProcess(int event, QString s);
 private:
     QObject * vol_block ;
     QList<QObject *> bat_block ;

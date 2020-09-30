@@ -14,7 +14,7 @@ Rectangle {
     height: 1872
     signal qmlSignal(int x, int y)
 
-    signal launchSignal(string s)
+    signal launchSignal(int event, string s)
 
     function getVolBlock() {
         return vol_block
@@ -46,7 +46,7 @@ Rectangle {
 
     Rectangle {
         id: vol_block
-//        objectName: "vol_block"
+        objectName: "vol_block"
         x: 1404
         y: 1820
         width: 1404
@@ -93,7 +93,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
 
-                canvas.launchSignal("http://youtube.com");
+                canvas.launchSignal(1, "http://youtube.com");
             }
         }
     }
@@ -117,7 +117,7 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                canvas.launchSignal("krita");
+                canvas.launchSignal(2, "krita");
             }
         }
     }
