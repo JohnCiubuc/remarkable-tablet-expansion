@@ -20,8 +20,6 @@ int main(int argc, char *argv[])
     qputenv("QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS", "rotate=180");
 
     system("/usr/bin/button-capture &");
-    system("systemctl stop draft");
-    system("systemctl stop xochitl");
 
     QGuiApplication app(argc, argv);
 
@@ -67,13 +65,12 @@ int main(int argc, char *argv[])
     thread->start();
 
     Server * s = new Server;
-//    thread = new QThread;
-//    s->moveToThread(thread);
-//    thread->start();
     QObject::connect(view, &MainView::sendPacket, s, &Server::sendPacket);
 
-    SystemWatcher * sWatcher = new SystemWatcher;
-    QObject::connect(sWatcher, &SystemWatcher::batteryUpdate, view, &MainView::batteryUpdate);
+//    SystemWatcher * sWatcher = new SystemWatcher;
+//    QObject::connect(sWatcher, &SystemWatcher::batteryUpdate, view, &MainView::batteryUpdate);
+    system("systemctl stop draft");
+    system("systemctl stop xochitl");
 
 //    QGuiApplication app(argc, argv);
 

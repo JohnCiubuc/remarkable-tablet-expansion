@@ -47,6 +47,7 @@ qml.files+= qml/prime.qml
 qml.files+= qml/Main_copy.qml
 qml.files+= qml/hex-grid.qml
 qml.files+= qml/pen-landed.qml
+qml.files+= qml/mpv_controller.qml
 qml.path == $$DEPLOYMENT_PATH/qml
 INSTALLS += qml
 
@@ -84,6 +85,7 @@ DISTFILES += \
     js/Main.js \
     qml/MenuItem.qml \
     qml/hex-grid.qml \
+    qml/mpv_controller.qml \
     qml/pen-landed.qml
 
 DISTFILES += \

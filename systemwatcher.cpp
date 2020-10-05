@@ -2,9 +2,7 @@
 
 SystemWatcher::SystemWatcher(QObject *parent) : QObject(parent)
 {
-    QTimer * batUpdates = new QTimer;
-    connect(batUpdates, &QTimer::timeout, this, &SystemWatcher::updateBattery);
-    batUpdates->start(1000);
+
     cat = new QProcess;
     connect(cat, &QProcess::readyReadStandardOutput, this, [=]()
     {
@@ -14,7 +12,9 @@ SystemWatcher::SystemWatcher(QObject *parent) : QObject(parent)
         // 1 - Charging
         emit batteryUpdate(all.toInt(), 0);
     });
-
+    QTimer * batUpdates = new QTimer;
+    connect(batUpdates, &QTimer::timeout, this, &SystemWatcher::updateBattery);
+    batUpdates->start(1000);
 }
 
 void SystemWatcher::updateBattery()

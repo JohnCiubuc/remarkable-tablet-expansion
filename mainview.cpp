@@ -8,8 +8,8 @@ MainView::MainView()
     bat_images << "qrc:/images/battery/battery_discharging_060.png";
     bat_images << "qrc:/images/battery/battery_discharging_080.png";
     bat_images << "qrc:/images/battery/battery_discharging_100.png";
+    bat_images << "qrc:/images/battery/battery_discharging_100.png";
     qRegisterMetaType<packet>("packet");
-
 }
 
 void MainView::connections()
@@ -24,6 +24,7 @@ void MainView::connections()
     vol_block = home->findChild<QObject*>("vol_block");
     bat_block << home->findChild<QObject*>("bat_percent");
     bat_block << home->findChild<QObject*>("bat_image");
+    mpv_block = home->findChild<QObject*>("mpv_block");
 //    qDebug() << (vol_block);
 //    qDebug() << "Property value:" << QQmlProperty::read(vol_block, "x").toInt();
 
@@ -35,10 +36,33 @@ void MainView::connections()
 
 void MainView::mousePosition(int x, int y)
 {
-    qDebug() << x << ", " << y;
-    if (y > 1820)
+//    qDebug() << x << ", " << y;
+    if(!bDebugMPVView)
     {
-        QQmlProperty::write(vol_block, "x", x);
+        if (y > 1820)
+        {
+            QQmlProperty::write(vol_block, "x", x);
+        }
+    }
+    if(bDebugMPVView)
+    {
+        if( x < 180)
+        {
+            QQmlProperty::write(mpv_block, "y", y);
+            float py = y / 1872. * 100;
+            db QString::number(py, 'f', 0);
+//            db y / 1872. * 100;
+            packet p;
+            p.event = 3;
+            QString s = QString::number(py, 'f', 0);
+            if (sDebugMPCCache == s) return;
+            sDebugMPCCache = s;
+            strcpy(p.message, s.toLocal8Bit());
+            db "send";
+            emit sendPacket(p);
+            //        a.write(data);
+//            emit sendPacket(p);
+        }
     }
 }
 
@@ -79,6 +103,18 @@ void MainView::getVolume()
 
 void MainView::launchProcess(int event, QString s)
 {
+    db "start";
+    // Youtube launcher, using it to swap MPV views for now
+    if(event == 1)
+    {
+        bDebugMPVView = !bDebugMPVView;
+        bDebugMPVView ? loadQML("mpv_controller") : loadQML("prime");
+
+        db "end event";
+        return;
+    }
+
+    db "post";
     s.append('\0');
 
     QByteArray data;
@@ -90,4 +126,13 @@ void MainView::launchProcess(int event, QString s)
     strcpy(p.message, s.toLocal8Bit());
 //        a.write(data);
     emit sendPacket(p);
+}
+
+void MainView::loadQML(QString qml_file)
+{
+    QTimer::singleShot( 500, [=]()
+    {
+        this->setSource(QDir(DEPLOYMENT_PATH).filePath("qml/" + qml_file + ".qml"));
+        connections();
+    });
 }

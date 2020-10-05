@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.13.1, 2020-09-29T20:01:16. -->
+<!-- Written by QtCreator 4.13.2, 2020-10-04T21:46:22. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -172,23 +172,25 @@
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/prime.qml</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/youtube.png</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/hex-grid.png</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/pen-landed.qml</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/Main.qml</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/Main_copy.qml</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/hex-grid.qml</value>
        <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/photoshop.png</value>
        <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/resources.qrc</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/js/Main.js</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/hex-grid.qml</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/MenuItem.qml</value>
-       <value type="QString">/home/inathero/Gits/build-remarkable-tablet-expansion-remarkable-Release/remarkable-tablet-expansion</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/Main_copy.qml</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/circle.png</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/spiral.jpg</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/pen-landed.qml</value>
        <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/gradient.png</value>
-       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/Main.qml</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/mpv_controller.qml</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/youtube.png</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/spiral.jpg</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/circle.png</value>
+       <value type="QString">/home/inathero/Gits/build-remarkable-tablet-expansion-remarkable-Release/remarkable-tablet-expansion</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/js/Main.js</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/prime.qml</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/images/hex-grid.png</value>
+       <value type="QString">/home/inathero/Gits/remarkable-tablet-expansion/qml/MenuItem.qml</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
+       <value type="QString">10.11.99.1</value>
        <value type="QString">10.11.99.1</value>
        <value type="QString">10.11.99.1</value>
        <value type="QString">10.11.99.1</value>
@@ -207,18 +209,19 @@
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
-       <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
-       <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
+       <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
        <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
        <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
        <value type="QString">/usr/share/remarkable-tablet-expansion/resources.qrc</value>
+       <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
+       <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
+       <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
+       <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
+       <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
+       <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
+       <value type="QString">/usr/bin</value>
        <value type="QString">/usr/share/remarkable-tablet-expansion/js</value>
        <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
-       <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
-       <value type="QString">/usr/bin</value>
-       <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
-       <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
-       <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
        <value type="QString">/usr/share/remarkable-tablet-expansion/images/</value>
        <value type="QString">/usr/share/remarkable-tablet-expansion/qml</value>
       </valuelist>
@@ -238,40 +241,43 @@
        <value type="QString">/usr/local/oecore-x86_64/sysroots/cortexa9hf-neon-oe-linux-gnueabi</value>
        <value type="QString">/usr/local/oecore-x86_64/sysroots/cortexa9hf-neon-oe-linux-gnueabi</value>
        <value type="QString">/usr/local/oecore-x86_64/sysroots/cortexa9hf-neon-oe-linux-gnueabi</value>
+       <value type="QString">/usr/local/oecore-x86_64/sysroots/cortexa9hf-neon-oe-linux-gnueabi</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedLocalTimes">
-       <value type="QDateTime">2020-09-29T20:00:43.062</value>
-       <value type="QDateTime">2020-09-25T20:28:27.782</value>
-       <value type="QDateTime">2020-09-25T19:44:26.893</value>
-       <value type="QDateTime">2020-09-25T20:07:10.020</value>
+       <value type="QDateTime">2020-09-25T15:39:29.481</value>
+       <value type="QDateTime">2020-09-25T15:53:21.441</value>
+       <value type="QDateTime">2020-09-25T19:49:10.597</value>
        <value type="QDateTime">2020-09-25T20:27:38.618</value>
        <value type="QDateTime">2020-09-29T19:55:24.789</value>
-       <value type="QDateTime">2020-09-25T15:39:29.480</value>
-       <value type="QDateTime">2020-09-25T19:49:10.597</value>
-       <value type="QDateTime">2020-09-25T15:39:29.481</value>
-       <value type="QDateTime">2020-09-29T19:55:27.024</value>
-       <value type="QDateTime">2020-09-25T15:53:21.441</value>
-       <value type="QDateTime">2020-09-25T20:25:19.806</value>
-       <value type="QDateTime">2020-09-25T20:05:32.250</value>
+       <value type="QDateTime">2020-09-25T20:07:10.020</value>
        <value type="QDateTime">2020-09-25T16:09:17.277</value>
+       <value type="QDateTime">2020-10-04T21:35:37.426</value>
+       <value type="QDateTime">2020-09-25T20:28:27.782</value>
+       <value type="QDateTime">2020-09-25T20:05:32.250</value>
+       <value type="QDateTime">2020-09-25T20:25:19.806</value>
+       <value type="QDateTime">2020-10-04T21:43:47.882</value>
+       <value type="QDateTime">2020-09-25T15:39:29.480</value>
+       <value type="QDateTime">2020-09-29T22:03:11.798</value>
+       <value type="QDateTime">2020-09-25T19:44:26.893</value>
        <value type="QDateTime">2020-09-25T15:39:29.481</value>
       </valuelist>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedRemoteTimes">
-       <value type="QDateTime">2020-09-29T20:00:49.000</value>
-       <value type="QDateTime">2020-09-26T00:58:55.000</value>
+       <value type="QDateTime">2020-09-26T00:58:54.000</value>
        <value type="QDateTime">2020-09-26T00:58:54.000</value>
        <value type="QDateTime">2020-09-26T00:58:54.000</value>
        <value type="QDateTime">2020-09-26T00:58:55.000</value>
        <value type="QDateTime">2020-09-29T19:55:30.000</value>
        <value type="QDateTime">2020-09-26T00:58:54.000</value>
        <value type="QDateTime">2020-09-26T00:58:54.000</value>
-       <value type="QDateTime">2020-09-26T00:58:54.000</value>
-       <value type="QDateTime">2020-09-29T19:55:31.000</value>
-       <value type="QDateTime">2020-09-26T00:58:54.000</value>
+       <value type="QDateTime">2020-10-04T21:37:55.000</value>
        <value type="QDateTime">2020-09-26T00:58:55.000</value>
        <value type="QDateTime">2020-09-26T00:58:55.000</value>
+       <value type="QDateTime">2020-09-26T00:58:55.000</value>
+       <value type="QDateTime">2020-10-04T21:43:59.000</value>
+       <value type="QDateTime">2020-09-26T00:58:54.000</value>
+       <value type="QDateTime">2020-10-04T21:11:36.000</value>
        <value type="QDateTime">2020-09-26T00:58:54.000</value>
        <value type="QDateTime">2020-09-26T00:58:54.000</value>
       </valuelist>

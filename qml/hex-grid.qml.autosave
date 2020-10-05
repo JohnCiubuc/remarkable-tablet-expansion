@@ -1,0 +1,42 @@
+import QtQuick 2.0
+
+Rectangle {
+    id: canvas
+    width: 1404
+    height: 1872
+    signal qmlSignal(int x, int y)
+    
+    
+    function getVolBlock() {
+        return vol_block
+    }
+    
+    Item {
+        id: item1
+        x: 300
+        y: 380
+        width: 667
+        height: 579
+        
+        Text {
+            id: text1
+            text: qsTr("This is a test")
+            anchors.fill: parent
+            font.pixelSize: 50
+            wrapMode: Text.WordWrap
+        }
+        
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+        }
+    }
+    
+    
+}
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.33000001311302185}
+}
+##^##*/

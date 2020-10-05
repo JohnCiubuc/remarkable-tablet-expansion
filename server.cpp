@@ -10,20 +10,7 @@ Server::Server(QWidget *parent)
 
     initServer();
     qRegisterMetaType<packet>("packet");
-
-    //! [2]
-    fortunes << tr("You've been leading a dog's life. Stay off the furniture.")
-             << tr("You've got to think about tomorrow.")
-             << tr("You will be surprised by a loud noise.")
-             << tr("You will feel hungry again in another hour.")
-             << tr("You might have mail.")
-             << tr("You cannot kill time without injuring eternity.")
-             << tr("Computers are not intelligent. They only think they are.");
-    //! [2]
-    //! [3]
     connect(tcpServer, &QTcpServer::newConnection, this, &Server::sendFortune);
-//    connect(tcpServer, &QTcpServer::, this, &Server::sendFortune);
-    //! [3]
 
 }
 
@@ -78,7 +65,6 @@ void Server::sendFortune()
     QDataStream out(&block, QIODevice::WriteOnly);
 //    out.setVersion(QDataStream::Qt_5_10);
 
-    out << fortunes[QRandomGenerator::global()->bounded(fortunes.size())].toLocal8Bit().data();
 //! [4] //! [7]
 
     clientConnection = tcpServer->nextPendingConnection();

@@ -5,6 +5,7 @@
 #include <QtQuick>
 #include <QDebug>
 #include <QProcess>
+#include <QTimer>
 
 #ifndef __PACKET
 #define __PACKET
@@ -32,8 +33,13 @@ public slots:
 private slots:
     void getVolume();
     void launchProcess(int event, QString s);
+    void loadQML(QString qml_file);
 private:
     QObject * vol_block ;
+    QObject * mpv_block ;
     QList<QObject *> bat_block ;
     QStringList bat_images;
+
+    bool bDebugMPVView = false;
+    QString sDebugMPCCache;
 };
